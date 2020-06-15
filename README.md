@@ -36,21 +36,52 @@ Esta aplicação é baseada no Servdor pusher e usa como cliente o Socket.io
 ## Como rodar esse projeto
 
 - [x] clonar este repositorio
-- [ ] entrar na pasta do projeto
+- [x] entrar na pasta do projeto
 ```bash
-https://github.com/jos3duardo/laravel-realtime.git && cd laravel-realtime
+git clone https://github.com/jos3duardo/laravel-realtime.git && cd laravel-realtime
 ```
 ```bash
 composer install && npm install
 ```
 
-- [ ] configurar banco de dados
->comandos    
-- [ ] php artisan migrate
-- [ ] php artisan serve
-- [ ] laravel-echo-server start
+modifique broadcast no .env
+
+```php
+BROADCAST_DRIVER=pusher
+```
+
+#### configurar banco de dados
+>comandos 
+```
+php artisan migrate
+php artisan serve
+```   
+instalando servidor do laravel echo
+```
+npm install -g laravel-echo-server
+```
+
+gerando APP_ID  e APP_KEY do pusher
+```php
+laravel-echo-server client:add APP_ID
+```
+após gerar adicione os valores no .env
+```php
+PUSHER_APP_ID="APP_ID"
+PUSHER_APP_KEY="APP_KEY"
+PUSHER_APP_SECRET=null
+PUSHER_APP_CLUSTER=mt1
+```
+
+certifiquese que tenha o laravel echo instalado
+
+```
+laravel-echo-server start
+```
 >opcional
--[ ] npm run watch
+```
+npm run watch
+```
 
 #### Observações
 é necessario a instalação do sqlite
