@@ -1,4 +1,4 @@
-## Realtime Laravel
+## Realtime Laravel 1
 
 Esta é uma aplicação em realtime com Laravel, construida para praticar sobre o uso desta tecnologia
 
